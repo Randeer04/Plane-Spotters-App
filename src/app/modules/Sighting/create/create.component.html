@@ -1,0 +1,55 @@
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+      <form [formGroup]="sightingForm" (ngSubmit)="saveSighting(sightingForm)" >
+      <div *ngIf="!submitted">
+        <div class="form-group"><label for="make">Make</label>
+          <input class="form-control" maxlength="128" type="text" formControlName="make">
+          <div class="alert alert-danger" *ngIf="sightingForm.get('make').invalid && (sightingForm.get('make').dirty || sightingForm.get('make').touched)">
+            Please provide a make.
+          </div>
+        </div>
+  
+        <div class="form-group"><label for="model">Model</label>
+          <input class="form-control" maxlength="128" type="text" formControlName="model">
+          <div class="alert alert-danger" *ngIf="sightingForm.get('model').invalid && (sightingForm.get('model').dirty || sightingForm.get('model').touched)">
+            Please provide a model.
+          </div>
+        </div>
+
+        <div class="form-group"><label for="registration">Registration</label>
+          <input class="form-control" maxlength="7" type="text" formControlName="registration">
+          <div class="alert alert-danger" *ngIf="sightingForm.get('registration').invalid && (sightingForm.get('registration').dirty || sightingForm.get('registration').touched)">
+            Please provide a registration.
+          </div>
+        </div>
+  
+        <div class="form-group"><label for="location"> Location</label>
+          <input class="form-control" maxlength="255" type="text" formControlName="location">
+          <div class="alert alert-danger" *ngIf="sightingForm.get('location').invalid && (sightingForm.get('location').dirty || sightingForm.get('location').touched)">
+            Please provide a location.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="sightingDate"> Date</label>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control"  placeholder="yyyy-mm-dd" type="text"  ngbDatepicker #d="ngbDatepicker" formControlName="sightingDate">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
+            <div class="alert alert-danger" *ngIf="sightingForm.get('sightingDate').invalid && (sightingForm.get('sightingDate').dirty || sightingForm.get('sightingDate').touched)">
+              Please provide sighting date.
+            </div>
+          </div>
+        </div>
+  
+        <button type="submit"  [disabled]="!sightingForm.valid" class="btn btn-success">Submit</button>
+      </div>
+      </form>
+  
+      <div class="alert alert-danger" *ngIf="showError">
+        {{errorText}}
+      </div>
+    </div>
+  </div>

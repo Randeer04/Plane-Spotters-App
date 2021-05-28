@@ -1,0 +1,64 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search by make" [(ngModel)]="make"/>
+        <input type="text" class="form-control" placeholder="Search by model" [(ngModel)]="model"/>
+        <input type="text" class="form-control" placeholder="Search by registration" [(ngModel)]="registration"/>
+        <div class="input-group-append">
+          <button class="btn btn-success" type="button" (click)="searchTitle()"> Search </button>
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-append">
+          <button class="btn btn-success" type="button" (click)="addNew()"> Add New </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Details</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let sighting of sightings; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveSighting(sighting, i)"
+        >
+          {{ sighting.make}}  {{ sighting.model}} 
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentSighting">
+        <h4>Details</h4>
+        <div>
+          <label><strong>Make:</strong></label> {{ currentSighting.make }}
+        </div>
+        <div>
+          <label><strong>Model:</strong></label>
+          {{ currentSighting.model }}
+        </div>
+
+        <div>
+          <label><strong>Registration:</strong></label> {{ currentSighting.registration }}
+        </div>
+        
+        <div>
+          <label><strong>Location:</strong></label> {{ currentSighting.location }}
+        </div>
+        <div>
+          <label><strong>Sighting Date:</strong></label> {{ currentSighting.sightingDate | date:"yyyy-MM-dd" }}
+        </div>
+        <div>
+        </div>
+  
+        <a class="badge badge-warning" routerLink="/sightings/{{ currentSighting.id }}">
+          Edit
+        </a>
+      </div>
+  
+      <div *ngIf="!currentSighting">
+        <br />
+        <p>Please click on a Sighting...</p>
+      </div>
+    </div>
+  </div>

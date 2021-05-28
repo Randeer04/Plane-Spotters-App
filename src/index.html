@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FineDine</title>
+  <base href="/">
+  <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-select.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pace.css">
+  <!-- <link href="node_modules/ng2-toastr/bundles/ng2-toastr.min.css" rel="stylesheet"/>
+  <script src="node_modules/ng2-toastr/bundles/ng2-toastr.min.js"></script>
+  <script src="node_modules/@angular/animations/bundles/animations.umd.min.js"></script> 
+  <script src="node_modules/@angular/animations/bundles/animations-browser.umd.min.js"></script> 
+  <script src="node_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js"></script>
+   <script src="node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js"></script> -->
+   <!-- <link href="node_modules/ng2-toastr/bundles/ng2-toastr.min.css" rel="stylesheet" /> -->
+   <!-- <script src="node_modules/ng2-toastr/bundles/ng2-toastr.min.js"></script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="sidebar-mini fixed" >
+    <div class="wrapper">
+  <app-root></app-root>
+  </div>
+
+</body>
+
+<script src="./assets/js/jquery-2.1.4.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/plugins/pace.min.js"></script>
+<script src="./assets/js/main.js"></script>
+<script type="text/javascript" src="./assets/js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="./assets/js/plugins/dataTables.bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="./assets/js/bootstrap-select.js"></script> -->
+<script type="text/javascript" src="./assets/js/plugins/select2.min.js"></script>
+<script type="text/javascript" src="./assets/js/plugins/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript">jQuery('#gridDataTable').DataTable();</script>
+<script>
+  window.paceOptions = {
+            ajax: false,
+            restartOnRequestAfter: false,
+        };
+</script>
+<script src="./assets/js/pace.min.js"></script>
+<script type="text/javascript" src="./assets/js/jquery.signalr-2.2.1.min.js"></script>
+
+
+<!-- <script>
+  $(document).ready(function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+</script> -->
+    <script type="text/javascript">
+      $('#sl').click(function(){
+      	$('#tl').loadingBtn();
+      	$('#tb').loadingBtn({ text : "Signing In"});
+      });
+      
+      $('#el').click(function(){
+      	$('#tl').loadingBtnComplete();
+      	$('#tb').loadingBtnComplete({ html : "Sign In"});
+      });
+      
+      $('#demoDate').datepicker({
+      	format: "dd/mm/yyyy",
+      	autoclose: true,
+      	todayHighlight: true
+      });
+      
+      $('#demoSelect').select2({ width: '100%' });
+    </script>
+
+
+</html>

@@ -1,3 +1,3 @@
 export const confguration = {
-    baseUrl: 'http://localhost:44306/api/'
+    baseUrl: 'http://localhost:52683/api/'
   };
